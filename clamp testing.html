@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+  <html>
+
+    <head>
+      <title>Clamp Test</title>
+      <style>
+
+        * {
+          margin: 0;
+          padding: 0;
+          font-family: "Montserrat", serif;
+          box-sizing: border-box;
+          font-size: 16px;
+        }
+
+        body {
+          display: flex;
+          flex-direction: column;
+          align-content: center;
+          justify-content: center;
+        }
+
+        @supports (padding: clamp(1rem, 1vi, 1rem)) {
+          :root {
+            --padding: clamp(1.9375rem, 0.80553rem + 5.031vw, 5.3333rem);
+           }
+        }
+
+        @supports (margin: clamp(1rem, 1vi, 1rem)) {
+          :root {
+            --margin: clamp(0.5rem, -1.3333rem + 8.148vw, 6rem);
+            
+           }
+        }
+
+        @supports (font-size: clamp(1rem, 1vi, 1rem)) {
+          :root {
+	        	--fs-smaller: clamp(0.69rem, 0.04vi + 0.68rem, 0.72rem);
+	        	--fs-small: clamp(0.83rem, 0.12vi + 0.81rem, 0.9rem);
+	        	--fs-p-base: clamp(1rem, 0.22vi + 0.95rem, 1.13rem);
+	        	--fs-h6: clamp(1.2rem, 0.36vi + 1.12rem, 1.41rem);
+	        	--fs-h5: clamp(1.44rem, 0.55vi + 1.32rem, 1.76rem);
+	        	--fs-h4: clamp(1.73rem, 0.82vi + 1.54rem, 2.2rem);
+	        	--fs-h3: clamp(2.07rem, 1.17vi + 1.81rem, 2.75rem);
+	        	--fs-h2: clamp(2.49rem, 1.64vi + 2.12rem, 3.43rem);
+	        	--fs-h1: clamp(2.99rem, 2.27vi + 2.48rem, 4.29rem);
+          }
+        }
+
+        div {
+          /* padding: var(--padding); */
+          margin: var(--margin);
+          border: 3px solid rgb(255, 0, 0);
+        }
+
+        p {
+          font-size: var(--fs-h1);
+          font-weight: normal;
+          margin: 0;
+          text-align: center;
+        }
+
+      </style>
+
+    </head>
+
+    <body>
+      <div>
+        <p>hello world!</p>
+      </div>
+    </body>
+
+  </html>
